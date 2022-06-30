@@ -18,4 +18,11 @@ Route::prefix('v1')->group(function () {
     Route::get('check', function () {
         return 'team-data is OK';
     });
+
+    Route::group(['prefix' => 'grades', 'namespace' => 'Grade'], function () {
+        Route::get('/', [
+            'uses' => 'GradeController@findGrades',
+            'as' => 'api.grades.find'
+        ]);
+    });
 });
