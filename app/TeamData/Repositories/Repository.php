@@ -11,4 +11,9 @@ class Repository implements RepositoryContract
     {
         return app(Repositories\GradeRepository::class);
     }
+
+    public function positions(): Repositories\PositionRepository
+    {
+        return app(Repositories\PositionRepository::class);
+    }
 }

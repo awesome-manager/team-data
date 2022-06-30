@@ -25,4 +25,11 @@ Route::prefix('v1')->group(function () {
             'as' => 'api.grades.find'
         ]);
     });
+
+    Route::group(['prefix' => 'positions', 'namespace' => 'Position'], function () {
+        Route::get('/', [
+            'uses' => 'PositionController@findPositions',
+            'as' => 'api.positions.find'
+        ]);
+    });
 });

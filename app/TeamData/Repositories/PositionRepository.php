@@ -3,9 +3,9 @@
 namespace App\TeamData\Repositories;
 
 use Illuminate\Database\Eloquent\Collection;
-use App\TeamData\Contracts\Repositories\GradeRepository as RepositoryContract;
+use App\TeamData\Contracts\Repositories\PositionRepository as RepositoryContract;
 
-class GradeRepository extends AbstractRepository implements RepositoryContract
+class PositionRepository extends AbstractRepository implements RepositoryContract
 {
     public function findAllActive(): Collection
     {
