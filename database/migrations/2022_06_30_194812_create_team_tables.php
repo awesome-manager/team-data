@@ -53,6 +53,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('title');
             $table->string('code', 100)->unique();
+            $table->smallInteger('sort')->default(500);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
@@ -75,6 +76,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('title', 100);
             $table->string('code', 100)->unique();
+            $table->smallInteger('sort')->default(500);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
