@@ -8,6 +8,7 @@ use App\TeamData\Contracts\Repositories\Repository as RepositoryContract;
 
 /**
  * @method static Repositories\GradeRepository grades()
+ * @method static Repositories\PositionRepository positions()
  */
 class Repository extends Facade
 {
