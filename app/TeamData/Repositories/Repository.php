@@ -16,4 +16,9 @@ class Repository implements RepositoryContract
     {
         return app(Repositories\PositionRepository::class);
     }
+
+    public function employees(): Repositories\EmployeeRepository
+    {
+        return app(Repositories\EmployeeRepository::class);
+    }
 }

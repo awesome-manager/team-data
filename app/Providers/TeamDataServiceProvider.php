@@ -31,6 +31,10 @@ class TeamDataServiceProvider extends ServiceProvider implements DeferrableProvi
         $this->app->bind(Contracts\Repositories\PositionRepository::class, function () {
             return new Repositories\PositionRepository(new Models\Position());
         });
+
+        $this->app->bind(Contracts\Repositories\EmployeeRepository::class, function () {
+            return new Repositories\EmployeeRepository(new Models\Employee());
+        });
     }
 
     /**
@@ -49,6 +53,7 @@ class TeamDataServiceProvider extends ServiceProvider implements DeferrableProvi
         return [
             Contracts\Repositories\GradeRepository::class,
             Contracts\Repositories\PositionRepository::class,
+            Contracts\Repositories\EmployeeRepository::class,
         ];
     }
 }
