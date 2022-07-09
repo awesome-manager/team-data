@@ -5,7 +5,7 @@ namespace App\Http\Resources\Api\Position;
 use Awesome\Foundation\Traits\Resourceable;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Positions extends JsonResource
+class PositionsResource extends JsonResource
 {
     use Resourceable;
 

@@ -24,6 +24,18 @@ class PositionsSeeder extends Seeder
             'title' => 'Тестировщик',
             'code' => 'qa'
         ],
+        [
+            'title' => 'Аналитик',
+            'code' => 'analyst'
+        ],
+        [
+            'title' => 'Дизайнер',
+            'code' => 'design'
+        ],
+        [
+            'title' => 'Верстальщик',
+            'code' => 'front'
+        ],
     ];
 
     /**

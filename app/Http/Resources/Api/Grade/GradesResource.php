@@ -5,7 +5,7 @@ namespace App\Http\Resources\Api\Grade;
 use Awesome\Foundation\Traits\Resourceable;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Grades extends JsonResource
+class GradesResource extends JsonResource
 {
     use Resourceable;
 
