@@ -14,6 +14,7 @@ class PositionsResource extends JsonResource
         return [
             'positions' => $this->resource->map(function ($position) {
                 return [
+                    'id' => $this->string($position->id),
                     'title' => $this->string($position->title),
                     'code' => $this->string($position->code),
                 ];

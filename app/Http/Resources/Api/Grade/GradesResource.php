@@ -14,6 +14,7 @@ class GradesResource extends JsonResource
         return [
             'grades' => $this->resource->map(function ($grade) {
                 return [
+                    'id' => $this->string($grade->id),
                     'title' => $this->string($grade->title),
                     'code' => $this->string($grade->code),
                 ];

@@ -24,6 +24,11 @@ class Employee extends Model
         'employment_at',
     ];
 
+    protected $casts = [
+        'employment_at',
+        'probation',
+    ];
+
     public function grade()
     {
         return $this->hasOne(Grade::class, 'id', 'grade_id');

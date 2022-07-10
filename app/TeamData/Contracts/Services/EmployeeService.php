@@ -1,10 +1,10 @@
 <?php
 
-namespace App\TeamData\Contracts\Repositories;
+namespace App\TeamData\Contracts\Services;
 
 use Illuminate\Database\Eloquent\Collection;
 
-interface EmployeeRepository
+interface EmployeeService
 {
     public function findAllActive(): Collection;
 }
