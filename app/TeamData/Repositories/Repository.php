@@ -21,4 +21,9 @@ class Repository implements RepositoryContract
     {
         return app(Repositories\EmployeeRepository::class);
     }
+
+    public function vacations(): Repositories\VacationRepository
+    {
+        return app(Repositories\VacationRepository::class);
+    }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f48a95654b15ccf2479863d31d1e05c",
+    "content-hash": "5c1852a573d784687856011e262304ab",
     "packages": [
         {
             "name": "brick/math",
@@ -1639,7 +1639,7 @@
         },
         {
             "name": "my-awesome-packages/foundation",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:my-awesome-packages/foundation.git",
@@ -1656,7 +1656,6 @@
                 "php": "^8.1",
                 "ramsey/uuid": "^4.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -1670,7 +1669,7 @@
             ],
             "description": "Awesome foundation",
             "support": {
-                "source": "https://github.com/my-awesome-packages/foundation/tree/1.1",
+                "source": "https://github.com/my-awesome-packages/foundation/tree/v1.0.0",
                 "issues": "https://github.com/my-awesome-packages/foundation/issues"
             },
             "time": "2022-06-30T22:40:23+00:00"
@@ -7733,9 +7732,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "my-awesome-packages/foundation": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

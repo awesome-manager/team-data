@@ -10,6 +10,7 @@ use App\TeamData\Contracts\Repositories\Repository as RepositoryContract;
  * @method static Repositories\GradeRepository grades()
  * @method static Repositories\PositionRepository positions()
  * @method static Repositories\EmployeeRepository employees()
+ * @method static Repositories\VacationRepository vacations()
  */
 class Repository extends Facade
 {

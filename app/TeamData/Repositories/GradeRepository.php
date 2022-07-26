@@ -10,7 +10,7 @@ class GradeRepository extends AbstractRepository implements RepositoryContract
     public function findAllActive(): Collection
     {
         return $this->getModel()->newQuery()
-            ->select(['title', 'code'])
+            ->select(['id', 'title', 'code'])
             ->where('is_active', true)
             ->orderByDesc('sort')
             ->get();

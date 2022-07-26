@@ -10,9 +10,18 @@ class PositionRepository extends AbstractRepository implements RepositoryContrac
     public function findAllActive(): Collection
     {
         return $this->getModel()->newQuery()
-            ->select(['title', 'code'])
+            ->select(['id', 'title', 'code'])
             ->where('is_active', true)
             ->orderByDesc('sort')
             ->get();
+    }
+
+    public function findByIds(array $ids): Collection
+    {
+        return $this->getModel()->newQuery()
+            ->select(['id', 'title', 'code'])
+            ->where('is_active', true)
+            ->orderByDesc('sort')
+            ->find($ids);
     }
 }

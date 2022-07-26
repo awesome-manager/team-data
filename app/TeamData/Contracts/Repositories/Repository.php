@@ -9,4 +9,6 @@ interface Repository
     public function positions(): PositionRepository;
 
     public function employees(): EmployeeRepository;
+
+    public function vacations(): VacationRepository;
 }

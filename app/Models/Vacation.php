@@ -20,6 +20,11 @@ class Vacation extends Model
         'employee_id',
     ];
 
+    protected $casts = [
+        'started_at',
+        'ended_at',
+    ];
+
     public function employee()
     {
         return $this->hasOne(Employee::class, 'id', 'employee_id');
