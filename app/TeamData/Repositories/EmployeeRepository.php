@@ -16,6 +16,19 @@ class EmployeeRepository extends AbstractRepository implements  RepositoryContra
             ->get();
     }
 
+    public function findByIds(array $ids): Collection
+    {
+        if (empty($ids)) {
+            return $this->getCollection();
+        }
+
+        return $this->getModel()->newQuery()
+            ->select(['id', 'name', 'surname', 'position_id', 'grade_id', 'employment_at', 'probation'])
+            ->where('is_active', true)
+            ->orderBy('name')
+            ->find($ids);
+    }
+
     public function bindGrades(Collection $employees): Collection
     {
         return $employees->load('grade:id,title,code');

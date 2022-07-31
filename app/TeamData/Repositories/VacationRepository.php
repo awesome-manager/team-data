@@ -11,7 +11,6 @@ class VacationRepository extends AbstractRepository implements RepositoryContrac
     {
         return $this->getModel()->newQuery()
             ->select(['id', 'employee_id', 'started_at', 'ended_at'])
-            ->with('employee:id,name,surname,position_id')
             ->orderByDesc('started_at')
             ->get();
     }
