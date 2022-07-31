@@ -3,9 +3,9 @@
 namespace App\Http\Resources\Api\Position;
 
 use Awesome\Foundation\Traits\Resourceable;
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class PositionsResource extends JsonResource
+class PositionsResource extends ResourceCollection
 {
     use Resourceable;
 

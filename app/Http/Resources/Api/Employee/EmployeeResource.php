@@ -3,9 +3,9 @@
 namespace App\Http\Resources\Api\Employee;
 
 use Awesome\Foundation\Traits\Resourceable;
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class EmployeeResource extends JsonResource
+class EmployeeResource extends ResourceCollection
 {
     use Resourceable;
 

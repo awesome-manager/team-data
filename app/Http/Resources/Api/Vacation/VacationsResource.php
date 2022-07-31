@@ -5,9 +5,9 @@ namespace App\Http\Resources\Api\Vacation;
 use Illuminate\Database\Eloquent\Model;
 use Awesome\Foundation\Traits\Resourceable;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class VacationsResource extends JsonResource
+class VacationsResource extends ResourceCollection
 {
     use Resourceable;
 
