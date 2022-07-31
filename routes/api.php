@@ -19,6 +19,13 @@ Route::prefix('v1')->group(function () {
         return 'team-data is OK';
     });
 
+    Route::group(['prefix' => 'employees', 'namespace' => 'Employee'], function () {
+        Route::get('/', [
+            'uses' => 'EmployeeController@findEmployees',
+            'as' => 'api.employees.find'
+        ]);
+    });
+
     Route::group(['prefix' => 'grades', 'namespace' => 'Grade'], function () {
         Route::get('/', [
             'uses' => 'GradeController@findGrades',

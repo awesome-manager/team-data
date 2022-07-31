@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models;
+use App\TeamData\Services;
 use App\TeamData\Contracts;
 use App\TeamData\Repositories;
 use Illuminate\Support\ServiceProvider;
@@ -31,6 +32,10 @@ class TeamDataServiceProvider extends ServiceProvider implements DeferrableProvi
         $this->app->bind(Contracts\Repositories\PositionRepository::class, function () {
             return new Repositories\PositionRepository(new Models\Position());
         });
+
+        $this->app->bind(Contracts\Repositories\EmployeeRepository::class, function () {
+            return new Repositories\EmployeeRepository(new Models\Employee());
+        });
     }
 
     /**
@@ -38,7 +43,7 @@ class TeamDataServiceProvider extends ServiceProvider implements DeferrableProvi
      */
     private function registerServices(): void
     {
-        //
+        $this->app->bind(Contracts\Services\EmployeeService::class, Services\EmployeeService::class);
     }
 
     /**
@@ -49,6 +54,9 @@ class TeamDataServiceProvider extends ServiceProvider implements DeferrableProvi
         return [
             Contracts\Repositories\GradeRepository::class,
             Contracts\Repositories\PositionRepository::class,
+            Contracts\Repositories\EmployeeRepository::class,
+
+            Contracts\Services\EmployeeService::class,
         ];
     }
 }
