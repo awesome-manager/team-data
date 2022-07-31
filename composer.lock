@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c1852a573d784687856011e262304ab",
+    "content-hash": "2c636bee5703a4ef0b2abac4740e0198",
     "packages": [
         {
             "name": "brick/math",
@@ -1673,6 +1673,49 @@
                 "issues": "https://github.com/my-awesome-packages/foundation/issues"
             },
             "time": "2022-06-30T22:40:23+00:00"
+        },
+        {
+            "name": "my-awesome-packages/rest",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:my-awesome-packages/rest.git",
+                "reference": "1a9d36965d451e17b880b3e3b1f93b354f1395dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/my-awesome-packages/rest/zipball/1a9d36965d451e17b880b3e3b1f93b354f1395dd",
+                "reference": "1a9d36965d451e17b880b3e3b1f93b354f1395dd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^9.0",
+                "illuminate/support": "^9.0",
+                "illuminate/validation": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Awesome\\Rest\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "v.lebedev",
+                    "email": "shadar147@gmail.com"
+                }
+            ],
+            "description": "Awesome rest",
+            "support": {
+                "source": "https://github.com/my-awesome-packages/rest/tree/v1.0.1",
+                "issues": "https://github.com/my-awesome-packages/rest/issues"
+            },
+            "time": "2022-07-31T10:53:10+00:00"
         },
         {
             "name": "nesbot/carbon",

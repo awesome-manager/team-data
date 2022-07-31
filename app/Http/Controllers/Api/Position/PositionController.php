@@ -10,6 +10,6 @@ class PositionController extends Controller
 {
     public function findPositions()
     {
-        return (new PositionsResource(Repository::positions()->findAllActive()))->toArray();
+        return response()->jsonResponse((new PositionsResource(Repository::positions()->findAllActive()))->toArray());
     }
 }

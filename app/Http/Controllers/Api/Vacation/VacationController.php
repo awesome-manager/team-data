@@ -16,6 +16,8 @@ class VacationController extends Controller
             $vacations->pluck('employee.position_id')->unique()->all()
         );
 
-        return (new VacationsResource(collect(compact('vacations', 'positions'))))->toArray();
+        return response()->jsonResponse(
+            (new VacationsResource(collect(compact('vacations', 'positions'))))->toArray()
+        );
     }
 }
