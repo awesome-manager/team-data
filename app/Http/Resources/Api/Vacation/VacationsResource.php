@@ -17,7 +17,7 @@ class VacationsResource extends ResourceCollection
     public function __construct($resource)
     {
         $this->vacations = $resource->get('vacations');
-        $this->employees = $resource->get('employees')->keyBy('id');
+        $this->employees = $resource->get('employees');
 
         parent::__construct($resource);
     }
