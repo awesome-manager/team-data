@@ -37,8 +37,7 @@ class VacationsResource extends ResourceCollection
                 return [
                     'id' => $this->string($employee->id),
                     'name' => $this->string($employee->name),
-                    'surname' => $this->string($employee->surname),
-                    'position_id' => $this->string($employee->position_id)
+                    'surname' => $this->string($employee->surname)
                 ];
             })
         ];
