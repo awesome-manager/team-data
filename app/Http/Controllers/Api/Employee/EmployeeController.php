@@ -8,9 +8,8 @@ use App\Http\Resources\Api\Employee\EmployeeResource;
 
 class EmployeeController extends Controller
 {
-    //TODO:: Add custom request
     public function findEmployees(EmployeeService $service)
     {
-        return (new EmployeeResource($service->findAllActive()))->toArray();
+        return response()->jsonResponse((new EmployeeResource($service->findAllActive()))->toArray());
     }
 }

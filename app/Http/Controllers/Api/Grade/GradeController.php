@@ -10,6 +10,6 @@ class GradeController extends Controller
 {
     public function findGrades()
     {
-        return (new GradesResource(Repository::grades()->findAllActive()))->toArray();
+        return response()->jsonResponse((new GradesResource(Repository::grades()->findAllActive()))->toArray());
     }
 }

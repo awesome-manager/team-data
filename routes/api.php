@@ -39,4 +39,11 @@ Route::prefix('v1')->group(function () {
             'as' => 'api.positions.find'
         ]);
     });
+
+    Route::group(['prefix' => 'vacations', 'namespace' => 'Vacation'], function () {
+        Route::get('/', [
+            'uses' => 'VacationController@findVacations',
+            'as' => 'api.vacations.find'
+        ]);
+    });
 });
