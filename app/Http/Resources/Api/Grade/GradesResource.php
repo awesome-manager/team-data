@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources\Api\Grade;
 
-use Awesome\Foundation\Traits\Resourceable;
+use Awesome\Foundation\Traits\Resources\Resourceable;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class GradesResource extends ResourceCollection

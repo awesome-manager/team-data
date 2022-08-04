@@ -2,9 +2,8 @@
 
 namespace App\Http\Resources\Api\Vacation;
 
-use Illuminate\Database\Eloquent\Model;
-use Awesome\Foundation\Traits\Resourceable;
 use Illuminate\Database\Eloquent\Collection;
+use Awesome\Foundation\Traits\Resources\Resourceable;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class VacationsResource extends ResourceCollection
