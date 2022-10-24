@@ -1,26 +1,26 @@
 <?php
 
-namespace Tests\Feature\Api\Grades;
+namespace Tests\Feature\Api\Positions;
 
-use App\Models\Grade;
+use App\Models\Position;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class GradeListTest extends TestCase
+class PositionListTest extends TestCase
 {
     use RefreshDatabase;
 
-    private string $route = '/api/v1/grades';
+    private string $route = '/api/v1/positions';
 
     public function test_find_all(): void
     {
-        $grades = Grade::factory()->count(10)->create();
+        $grades = Position::factory()->count(10)->create();
 
         $response = $this->get($this->route);
 
         $response->assertOk()
             ->assertJsonStructure($this->getListStruture())
-            ->assertJsonCount($grades->where('is_active', true)->count(), 'content.grades');
+            ->assertJsonCount($grades->where('is_active', true)->count(), 'content.positions');
     }
 
     private function getListStruture(): array
@@ -28,7 +28,7 @@ class GradeListTest extends TestCase
         return [
             'error',
             'content' => [
-                'grades' => [
+                'positions' => [
                     '*' => [
                         'id',
                         'title',
