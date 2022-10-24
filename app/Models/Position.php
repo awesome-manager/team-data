@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Awesome\Foundation\Traits\Models\AwesomeModel;
-use Database\Factories\GradeFactory;
+use Database\Factories\PositionFactory;
 use Illuminate\Database\Eloquent\Factories\{Factory, HasFactory};
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,6 +19,6 @@ class Position extends Model
 
     protected static function newFactory(): Factory
     {
-        return GradeFactory::new();
+        return PositionFactory::new();
     }
 }

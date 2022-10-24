@@ -13,8 +13,8 @@ class PositionFactory extends Factory
     {
         return [
             'title' => $this->faker->word(),
-            'code' => $this->faker->word(),
-            'sort' => $this->faker->randomNumber(),
+            'code' => $this->faker->unique()->word(),
+            'sort' => $this->faker->randomNumber(4),
             'is_active' => $this->faker->boolean()
         ];
     }

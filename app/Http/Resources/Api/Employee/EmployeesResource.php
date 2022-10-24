@@ -9,7 +9,7 @@ class EmployeesResource extends ResourceCollection
 {
     use Resourceable;
 
-    public function toArray($request = null)
+    public function toArray($request = null): array
     {
         return [
             'employees' => $this->resource->map(function ($employee) {
@@ -26,8 +26,12 @@ class EmployeesResource extends ResourceCollection
         ];
     }
 
-    private function prepareGrade($grade)
+    private function prepareGrade($grade): array
     {
+        if (is_null($grade)) {
+            return [];
+        }
+
         return [
             'id' => $this->string($grade->id),
             'title' => $this->string($grade->title),
@@ -35,8 +39,12 @@ class EmployeesResource extends ResourceCollection
         ];
     }
 
-    private function preparePosition($position)
+    private function preparePosition($position): array
     {
+        if (is_null($position)) {
+            return [];
+        }
+
         return [
             'id' => $this->string($position->id),
             'title' => $this->string($position->title),
