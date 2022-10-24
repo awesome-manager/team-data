@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests\Feature\Api\Customers;
+namespace Tests\Feature\Api\Employees;
 
 use App\Models\{Employee, Grade, Position};
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class CustomerListTest extends TestCase
+class EmployeeListTest extends TestCase
 {
     use RefreshDatabase;
 
