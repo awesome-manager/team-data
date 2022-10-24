@@ -20,7 +20,7 @@ class VacationController extends Controller
             throw new VacationsNotFound('Не найдено ни одного отпуска');
         }
 
-        $employees = Repository::employees()->findByIds($this->pluckUniqueAttr($vacations, 'employee_id'));
+        $employees = Repository::employees()->findByIds($this->pluckUniqueAttr($vacations, 'employee_id'), false);
 
         return response()->jsonResponse(
             (new VacationsResource(collect(compact('vacations', 'employees'))))->toArray()
