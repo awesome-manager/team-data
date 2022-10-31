@@ -2,21 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Awesome\Foundation\Traits\Models\AwesomeModel;
+use Database\Factories\PositionFactory;
+use Illuminate\Database\Eloquent\Factories\{Factory, HasFactory};
+use Illuminate\Database\Eloquent\Model;
 
 class Position extends Model
 {
-    use AwesomeModel;
+    use AwesomeModel, HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'code',
         'title',
         'is_active',
     ];
+
+    protected static function newFactory(): Factory
+    {
+        return PositionFactory::new();
+    }
 }

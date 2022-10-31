@@ -2,18 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Awesome\Foundation\Traits\Models\AwesomeModel;
+use Database\Factories\VacationFactory;
+use Illuminate\Database\Eloquent\Factories\{Factory, HasFactory};
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Vacation extends Model
 {
-    use AwesomeModel;
+    use AwesomeModel, HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'ended_at',
         'started_at',
@@ -25,7 +23,12 @@ class Vacation extends Model
         'ended_at',
     ];
 
-    public function employee()
+    protected static function newFactory(): Factory
+    {
+        return VacationFactory::new();
+    }
+
+    public function employee(): HasOne
     {
         return $this->hasOne(Employee::class, 'id', 'employee_id');
     }

@@ -16,7 +16,7 @@ class EmployeeRepository extends AbstractRepository implements  RepositoryContra
             ->get();
     }
 
-    public function findByIds(array $ids): Collection
+    public function findByIds(array $ids, bool $activeOnly = true): Collection
     {
         if (empty($ids)) {
             return $this->getCollection();
@@ -24,7 +24,9 @@ class EmployeeRepository extends AbstractRepository implements  RepositoryContra
 
         return $this->getModel()->newQuery()
             ->select(['id', 'name', 'surname', 'position_id', 'grade_id', 'employment_at', 'probation'])
-            ->where('is_active', true)
+            ->when($activeOnly, function ($query) {
+                return $query->where('is_active', true);
+            })
             ->orderBy('name')
             ->find($ids);
     }
