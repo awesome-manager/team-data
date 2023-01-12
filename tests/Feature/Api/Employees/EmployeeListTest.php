@@ -26,7 +26,7 @@ class EmployeeListTest extends TestCase
         );
     }
 
-    public function find_all_active(): void
+    public function test_find_all_active(): void
     {
         $employees = $this->createEmployees();
 
@@ -38,7 +38,7 @@ class EmployeeListTest extends TestCase
         );
     }
 
-    public function find_by_ids(): void
+    public function test_find_by_ids(): void
     {
         $employees = $this->createEmployees();
 
@@ -56,7 +56,7 @@ class EmployeeListTest extends TestCase
         );
     }
 
-    public function find_active_by_ids(): void
+    public function test_find_active_by_ids(): void
     {
         $employees = $this->createEmployees();
 
