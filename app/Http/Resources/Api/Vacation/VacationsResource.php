@@ -27,8 +27,8 @@ class VacationsResource extends ResourceCollection
             'vacations' => $this->vacations->map(function ($vacation) {
                 return [
                     'id' => $this->string($vacation->id),
-                    'started_at' => $this->string($vacation->started_at), //TODO:: add timestamp resource
-                    'ended_at' => $this->string($vacation->ended_at),
+                    'started_at' => $this->timestamp($vacation->started_at),
+                    'ended_at' => $this->timestamp($vacation->ended_at),
                     'employee_id' => $this->string($vacation->employee_id)
                 ];
             }),
