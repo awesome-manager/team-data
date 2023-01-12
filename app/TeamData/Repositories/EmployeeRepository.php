@@ -2,18 +2,19 @@
 
 namespace App\TeamData\Repositories;
 
-use Illuminate\Database\Eloquent\Collection;
 use App\TeamData\Contracts\Repositories\EmployeeRepository as RepositoryContract;
+use Illuminate\Database\Eloquent\{Builder, Collection};
 
 class EmployeeRepository extends AbstractRepository implements  RepositoryContract
 {
     public function findAllActive(): Collection
     {
-        return $this->getModel()->newQuery()
-            ->select(['id', 'name', 'surname', 'position_id', 'grade_id', 'employment_at', 'probation'])
-            ->where('is_active', true)
-            ->orderBy('name')
-            ->get();
+        return $this->defaultFindRequest()->get();
+    }
+
+    public function findAll(): Collection
+    {
+        return $this->defaultFindRequest(false)->get();
     }
 
     public function findByIds(array $ids, bool $activeOnly = true): Collection
@@ -22,13 +23,7 @@ class EmployeeRepository extends AbstractRepository implements  RepositoryContra
             return $this->getCollection();
         }
 
-        return $this->getModel()->newQuery()
-            ->select(['id', 'name', 'surname', 'position_id', 'grade_id', 'employment_at', 'probation'])
-            ->when($activeOnly, function ($query) {
-                return $query->where('is_active', true);
-            })
-            ->orderBy('name')
-            ->find($ids);
+        return $this->defaultFindRequest($activeOnly)->find($ids);
     }
 
     public function bindGrades(Collection $employees): Collection
@@ -39,5 +34,15 @@ class EmployeeRepository extends AbstractRepository implements  RepositoryContra
     public function bindPositions(Collection $employees): Collection
     {
         return $employees->load('position:id,title,code');
+    }
+
+    private function defaultFindRequest(bool $activeOnly = true): Builder
+    {
+        return $this->getModel()->newQuery()
+            ->select(['id', 'name', 'surname', 'position_id', 'grade_id', 'employment_at', 'probation'])
+            ->when($activeOnly, function ($query) {
+                return $query->where('is_active', true);
+            })
+            ->orderBy('name');
     }
 }

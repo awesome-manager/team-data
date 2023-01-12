@@ -17,8 +17,8 @@ class EmployeesResource extends ResourceCollection
                     'id' => $this->string($employee->id),
                     'name' => $this->string($employee->name),
                     'surname' => $this->string($employee->surname),
-                    'employment_at' => $this->string($employee->employment_at), //TODO:: date Resourceable trait
-                    'probation' => $this->string($employee->probation),
+                    'employment_at' => $this->timestamp($employee->employment_at),
+                    'probation' => $this->timestamp($employee->probation),
                     'grade' => $this->prepareGrade($employee->grade),
                     'position' => $this->preparePosition($employee->position),
                 ];
