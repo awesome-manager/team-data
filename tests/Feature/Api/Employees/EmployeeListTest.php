@@ -3,10 +3,10 @@
 namespace Tests\Feature\Api\Employees;
 
 use App\Models\{Employee, Grade, Position};
+use Awesome\Foundation\Traits\Tests\{DataHandler, Queryable};
 use Illuminate\Support\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use Awesome\Foundation\Traits\Tests\{DataHandler, Queryable};
 
 class EmployeeListTest extends TestCase
 {
@@ -20,7 +20,7 @@ class EmployeeListTest extends TestCase
 
         $this->checkAssert(
             $this->get($this->route . $this->buildQuery(['active_only' => 0])),
-            $this->getListStruture(),
+            $this->getListStructure(),
             $employees->count(),
             'content.employees'
         );
@@ -32,7 +32,7 @@ class EmployeeListTest extends TestCase
 
         $this->checkAssert(
             $this->get($this->route),
-            $this->getListStruture(),
+            $this->getListStructure(),
             $employees->where('is_active', true)->count(),
             'content.employees'
         );
@@ -50,7 +50,7 @@ class EmployeeListTest extends TestCase
                 'active_only' => 0
                 ])
             ),
-            $this->getListStruture(),
+            $this->getListStructure(),
             $randomEmployees->count(),
             'content.employees'
         );
@@ -64,7 +64,7 @@ class EmployeeListTest extends TestCase
 
         $this->checkAssert(
             $this->get($this->route . $this->buildIdsQuery($randomEmployees->pluck('id')->all())),
-            $this->getListStruture(),
+            $this->getListStructure(),
             $randomEmployees->where('is_active', true)->count(),
             'content.employees'
         );
@@ -81,7 +81,7 @@ class EmployeeListTest extends TestCase
         ]));
     }
 
-    private function getListStruture(): array
+    private function getListStructure(): array
     {
         return [
             'error',

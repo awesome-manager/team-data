@@ -3,9 +3,9 @@
 namespace Tests\Feature\Api\Grades;
 
 use App\Models\Grade;
+use Awesome\Foundation\Traits\Tests\{DataHandler, Queryable};
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use Awesome\Foundation\Traits\Tests\{DataHandler, Queryable};
 
 class GradeListTest extends TestCase
 {
@@ -19,7 +19,7 @@ class GradeListTest extends TestCase
 
         $this->checkAssert(
             $this->get($this->route),
-            $this->getListStruture(),
+            $this->getListStructure(),
             $grades->where('is_active', true)->count(),
             'content.grades'
         );
@@ -33,13 +33,13 @@ class GradeListTest extends TestCase
 
         $this->checkAssert(
             $this->get($this->route . $this->buildIdsQuery($randomGrades->pluck('id')->all())),
-            $this->getListStruture(),
+            $this->getListStructure(),
             $randomGrades->where('is_active', true)->count(),
             'content.grades'
         );
     }
 
-    private function getListStruture(): array
+    private function getListStructure(): array
     {
         return [
             'error',
