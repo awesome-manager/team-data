@@ -15,7 +15,7 @@ class EmployeeController extends Controller
             (new EmployeesResource(
                 $service->find(
                     $request->query('ids', []),
-                    $request->query('active_only', false)
+                    $request->query('active_only', true)
                 )
             ))->toArray()
         );

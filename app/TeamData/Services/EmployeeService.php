@@ -12,18 +12,13 @@ class EmployeeService implements ServiceContract
     {
         if (empty($ids)) {
             if ($activeOnly) {
-                $employees = Repository::employees()->findAllActive();
+                return Repository::employees()->findAllActive();
             } else {
-                $employees = Repository::employees()->findAll();
+                return Repository::employees()->findAll();
             }
         } else {
-            $employees = Repository::employees()->findByIds($ids, $activeOnly);
+            return Repository::employees()->findByIds($ids, $activeOnly);
         }
-
-        return tap($employees, function ($collection) {
-            Repository::employees()->bindGrades($collection);
-            Repository::employees()->bindPositions($collection);
-        });
     }
 
     public function findAllActive(): Collection

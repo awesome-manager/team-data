@@ -19,36 +19,10 @@ class EmployeesResource extends ResourceCollection
                     'surname' => $this->string($employee->surname),
                     'employment_at' => $this->timestamp($employee->employment_at),
                     'probation' => $this->timestamp($employee->probation),
-                    'grade' => $this->prepareGrade($employee->grade),
-                    'position' => $this->preparePosition($employee->position),
+                    'grade_id' => $this->string($employee->grade_id),
+                    'position_id' => $this->string($employee->position_id),
                 ];
             })
-        ];
-    }
-
-    private function prepareGrade($grade): array
-    {
-        if (is_null($grade)) {
-            return [];
-        }
-
-        return [
-            'id' => $this->string($grade->id),
-            'title' => $this->string($grade->title),
-            'code' => $this->string($grade->code),
-        ];
-    }
-
-    private function preparePosition($position): array
-    {
-        if (is_null($position)) {
-            return [];
-        }
-
-        return [
-            'id' => $this->string($position->id),
-            'title' => $this->string($position->title),
-            'code' => $this->string($position->code),
         ];
     }
 }
